@@ -1,0 +1,1926 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>G A Stone Mason LLC | Premium Stone Masonry</title>
+    <meta
+      name="description"
+      content="G A Stone Mason LLC provides premium stone masonry, patios, pools, decks, and concrete work with expert craftsmanship and modern design."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --charcoal: #1a1a1a;
+        --off-white: #f5f3f0;
+        --stone-gray: #7a7a72;
+        --gold: #c9a84c;
+        --max-width: 1120px;
+        --radius-lg: 18px;
+        --radius-md: 12px;
+        --shadow-soft: 0 18px 45px rgba(0, 0, 0, 0.22);
+        --shadow-subtle: 0 14px 35px rgba(0, 0, 0, 0.12);
+        --transition-fast: 180ms ease-out;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        scroll-behavior: smooth;
+        background-color: var(--charcoal);
+        color: var(--off-white);
+        font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          sans-serif;
+      }
+
+      body {
+        line-height: 1.5;
+      }
+
+      img {
+        max-width: 100%;
+        display: block;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      button {
+        font-family: inherit;
+      }
+
+      .page {
+        min-height: 100vh;
+        background: radial-gradient(circle at top left, #2e2e2a 0, #0e0e0e 48%, #000 100%);
+        color: var(--off-white);
+      }
+
+      .page-inner {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 1.5rem 1.5rem 4rem;
+      }
+
+      /* NAVIGATION */
+      .nav {
+        position: sticky;
+        top: 0;
+        z-index: 40;
+        backdrop-filter: blur(22px);
+        background: linear-gradient(
+          to bottom,
+          rgba(6, 6, 6, 0.95),
+          rgba(6, 6, 6, 0.85),
+          transparent
+        );
+      }
+
+      .nav-inner {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 1rem 1.5rem 0.75rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1.25rem;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        font-family: "Playfair Display", serif;
+        letter-spacing: 0.12em;
+        font-size: 0.9rem;
+        text-transform: uppercase;
+      }
+
+      .logo-mark {
+        width: 32px;
+        height: 32px;
+        border-radius: 999px;
+        border: 1px solid rgba(201, 168, 76, 0.45);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background: radial-gradient(circle at 30% 0%, #f8f4ea 0, #cbbfa3 18%, #5a5540 60%, #111111 100%);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.45);
+        font-size: 0.8rem;
+        color: #151515;
+        font-weight: 600;
+      }
+
+      .logo-text-main {
+        font-weight: 500;
+      }
+
+      .logo-text-sub {
+        display: block;
+        font-size: 0.7rem;
+        opacity: 0.58;
+        letter-spacing: 0.22em;
+      }
+
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 1.75rem;
+        font-size: 0.88rem;
+        text-transform: uppercase;
+        letter-spacing: 0.16em;
+      }
+
+      .nav-link {
+        position: relative;
+        padding-bottom: 0.2rem;
+        cursor: pointer;
+        color: rgba(245, 243, 240, 0.82);
+      }
+
+      .nav-link::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 0;
+        height: 1px;
+        background: linear-gradient(90deg, var(--gold), rgba(201, 168, 76, 0.2));
+        transition: width var(--transition-fast);
+      }
+
+      .nav-link:hover::after,
+      .nav-link.active::after {
+        width: 100%;
+      }
+
+      .nav-link:hover {
+        color: #ffffff;
+      }
+
+      .nav-cta {
+        border-radius: 999px;
+        border: 1px solid rgba(201, 168, 76, 0.7);
+        padding: 0.55rem 1.15rem;
+        font-size: 0.78rem;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        background: radial-gradient(circle at 0% 0%, rgba(201, 168, 76, 0.25), transparent 55%);
+        color: var(--off-white);
+        display: none;
+      }
+
+      .nav-cta:hover {
+        background: rgba(201, 168, 76, 0.1);
+      }
+
+      .nav-toggle {
+        display: none;
+        width: 32px;
+        height: 32px;
+        padding: 0;
+        border-radius: 999px;
+        border: 1px solid rgba(120, 120, 120, 0.6);
+        background: rgba(10, 10, 10, 0.9);
+        display: none;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+      }
+
+      .nav-toggle-line {
+        width: 16px;
+        height: 1px;
+        background: #f3f3f3;
+        position: relative;
+        transition: transform 180ms ease, background 180ms ease;
+      }
+
+      .nav-toggle-line::before,
+      .nav-toggle-line::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        width: 16px;
+        height: 1px;
+        background: #f3f3f3;
+        transition: transform 180ms ease, opacity 160ms ease;
+      }
+
+      .nav-toggle-line::before {
+        top: -4px;
+      }
+
+      .nav-toggle-line::after {
+        top: 4px;
+      }
+
+      .nav-toggle.open .nav-toggle-line {
+        background: transparent;
+      }
+
+      .nav-toggle.open .nav-toggle-line::before {
+        transform: translateY(4px) rotate(45deg);
+      }
+
+      .nav-toggle.open .nav-toggle-line::after {
+        transform: translateY(-4px) rotate(-45deg);
+      }
+
+      .nav-drawer {
+        display: none;
+        background: rgba(5, 5, 5, 0.96);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        box-shadow: 0 28px 80px rgba(0, 0, 0, 0.8);
+      }
+
+      .nav-drawer-inner {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0.75rem 1.5rem 1.1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.35rem;
+      }
+
+      .nav-drawer a {
+        font-size: 0.86rem;
+        text-transform: uppercase;
+        letter-spacing: 0.16em;
+        padding: 0.45rem 0;
+        color: rgba(245, 243, 240, 0.9);
+      }
+
+      .nav-drawer a span {
+        opacity: 0.66;
+        font-size: 0.75rem;
+        margin-left: 0.5rem;
+      }
+
+      .nav-drawer a:hover {
+        color: #ffffff;
+      }
+
+      /* HERO */
+      .hero {
+        display: grid;
+        grid-template-columns: minmax(0, 1.45fr) minmax(0, 1.15fr);
+        gap: clamp(2.4rem, 5vw, 3.5rem);
+        align-items: center;
+        padding-top: 3.25rem;
+        padding-bottom: clamp(4rem, 7vh, 5.5rem);
+      }
+
+      .hero-header-kicker {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.75rem;
+        font-size: 0.75rem;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: rgba(245, 243, 240, 0.7);
+        margin-bottom: 1.55rem;
+      }
+
+      .hero-header-kicker-dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 999px;
+        background: var(--gold);
+        box-shadow: 0 0 16px rgba(201, 168, 76, 0.8);
+      }
+
+      .hero-title {
+        font-family: "Playfair Display", serif;
+        font-size: clamp(2.6rem, 4vw, 3.45rem);
+        line-height: 1.04;
+        letter-spacing: -0.03em;
+        margin: 0 0 1.2rem;
+        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5), 0 2px 12px rgba(0, 0, 0, 0.35);
+      }
+
+      .hero-title span {
+        color: var(--gold);
+      }
+
+      .hero-subtitle {
+        max-width: 32rem;
+        font-size: 0.98rem;
+        color: rgba(245, 243, 240, 0.78);
+        margin-bottom: 1.8rem;
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4), 0 2px 8px rgba(0, 0, 0, 0.3);
+      }
+
+      .hero-highlight-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.2rem;
+        align-items: center;
+        margin-bottom: 2.2rem;
+      }
+
+      .hero-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.45rem;
+        padding: 0.4rem 0.85rem;
+        border-radius: 999px;
+        border: 1px solid rgba(201, 168, 76, 0.65);
+        background: radial-gradient(circle at 0% 0%, rgba(201, 168, 76, 0.25), transparent 60%);
+        font-size: 0.78rem;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+      }
+
+      .hero-badge-dot {
+        width: 9px;
+        height: 9px;
+        border-radius: 999px;
+        border: 1px solid rgba(201, 168, 76, 0.7);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .hero-badge-dot-inner {
+        width: 4px;
+        height: 4px;
+        border-radius: 999px;
+        background: var(--gold);
+      }
+
+      .hero-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        font-size: 0.8rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: rgba(245, 243, 240, 0.5);
+      }
+
+      .hero-meta-item strong {
+        display: block;
+        font-size: 0.9rem;
+        letter-spacing: 0.18em;
+        color: rgba(245, 243, 240, 0.85);
+        margin-bottom: 0.15rem;
+      }
+
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 1.25rem;
+      }
+
+      .btn-primary {
+        border-radius: 999px;
+        border: none;
+        padding: 0.95rem 1.85rem;
+        font-size: 0.88rem;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        background: linear-gradient(120deg, #ddc27a, var(--gold), #b78e2f);
+        color: #111;
+        font-weight: 600;
+        cursor: pointer;
+        box-shadow: 0 18px 40px rgba(0, 0, 0, 0.75);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .btn-primary::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(circle at 0 0, rgba(255, 255, 255, 0.6), transparent 45%);
+        opacity: 0;
+        transition: opacity 180ms ease-out;
+      }
+
+      .btn-primary:hover::after {
+        opacity: 1;
+      }
+
+      .btn-secondary-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.6rem;
+        font-size: 0.9rem;
+      }
+
+      .btn-secondary-link span {
+        width: 32px;
+        height: 32px;
+        border-radius: 999px;
+        border: 1px solid rgba(245, 243, 240, 0.25);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.9rem;
+      }
+
+      .hero-right {
+        position: relative;
+      }
+
+      .hero-card {
+        border-radius: var(--radius-lg);
+        padding: 1.8rem 1.8rem 1.5rem;
+        background: linear-gradient(135deg, rgba(250, 246, 236, 0.06), rgba(12, 12, 12, 0.96));
+        box-shadow: var(--shadow-soft);
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        position: relative;
+        overflow: hidden;
+        isolation: isolate;
+      }
+
+      .hero-card-img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -2;
+      }
+
+      .hero-card-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+            180deg,
+            rgba(0, 0, 0, 0.6),
+            rgba(0, 0, 0, 0.98)
+          );
+        opacity: 0.93;
+        z-index: -1;
+      }
+
+      .hero-card-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 1rem;
+        margin-bottom: 2.1rem;
+      }
+
+      .hero-card-title {
+        font-family: "Playfair Display", serif;
+        font-size: 1.1rem;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+      }
+
+      .hero-card-tag {
+        font-size: 0.76rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        padding: 0.4rem 0.7rem;
+        border-radius: 999px;
+        background-color: rgba(26, 26, 26, 0.9);
+        border: 1px solid rgba(201, 168, 76, 0.65);
+        color: rgba(245, 243, 240, 0.9);
+      }
+
+      .hero-card-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.9rem;
+      }
+
+      .hero-stat {
+        padding: 0.9rem 1rem;
+        border-radius: var(--radius-md);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        background: radial-gradient(circle at 0 0, rgba(201, 168, 76, 0.22), transparent 65%);
+        backdrop-filter: blur(10px);
+      }
+
+      .hero-stat-label {
+        font-size: 0.7rem;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: rgba(245, 243, 240, 0.6);
+        margin-bottom: 0.35rem;
+      }
+
+      .hero-stat-value {
+        display: flex;
+        align-items: baseline;
+        gap: 0.25rem;
+      }
+
+      .hero-stat-value strong {
+        font-size: 1.1rem;
+        font-weight: 500;
+      }
+
+      .hero-stat-value span {
+        font-size: 0.7rem;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: rgba(245, 243, 240, 0.7);
+      }
+
+      .hero-stat-subtext {
+        font-size: 0.7rem;
+        color: rgba(245, 243, 240, 0.6);
+        margin-top: 0.25rem;
+      }
+
+      .hero-card-footer {
+        margin-top: 1.4rem;
+        padding-top: 1.2rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.06);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+      }
+
+      .hero-card-footer-text {
+        font-size: 0.78rem;
+        color: rgba(245, 243, 240, 0.65);
+      }
+
+      .hero-card-footer-text strong {
+        display: block;
+        font-size: 0.8rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        margin-bottom: 0.16rem;
+        color: rgba(245, 243, 240, 0.9);
+      }
+
+      .hero-card-badge {
+        width: 44px;
+        height: 44px;
+        border-radius: 999px;
+        border: 1px solid rgba(201, 168, 76, 0.75);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: radial-gradient(circle at 20% 0%, #f8f4ea, #cbbfa3 40%, #312b1b 100%);
+        color: #191410;
+        font-size: 0.7rem;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        font-weight: 600;
+      }
+
+      .hero-float-card {
+        position: absolute;
+        right: 0.4rem;
+        bottom: -1.2rem;
+        transform: translateY(-50%);
+        padding: 0.75rem 0.9rem;
+        border-radius: 999px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        background: rgba(5, 5, 5, 0.96);
+        display: inline-flex;
+        align-items: center;
+        gap: 0.65rem;
+        box-shadow: 0 16px 40px rgba(0, 0, 0, 0.72);
+        backdrop-filter: blur(18px);
+      }
+
+      .hero-float-indicator {
+        width: 22px;
+        height: 22px;
+        border-radius: 999px;
+        background: radial-gradient(circle, #1ea46a 0, #0b4f34 70%, #020603 100%);
+        position: relative;
+      }
+
+      .hero-float-indicator::after {
+        content: "";
+        position: absolute;
+        inset: -7px;
+        border-radius: inherit;
+        border: 1px solid rgba(27, 196, 120, 0.5);
+        opacity: 0.6;
+      }
+
+      .hero-float-text {
+        font-size: 0.75rem;
+        color: rgba(245, 243, 240, 0.8);
+      }
+
+      .hero-float-text span {
+        display: block;
+        font-size: 0.68rem;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: rgba(245, 243, 240, 0.6);
+      }
+
+      /* SECTIONS WRAPPER */
+      .sections {
+        margin-top: 1rem;
+        background-color: var(--off-white);
+        color: #141414;
+        border-radius: 30px 30px 0 0;
+        box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.7);
+        overflow: hidden;
+      }
+
+      .sections-inner {
+        max-width: var(--max-width);
+        margin: 0 auto;
+        padding: 3.25rem 1.5rem 3.5rem;
+      }
+
+      .section {
+        padding: 2.75rem 0;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+      }
+
+      .section:last-of-type {
+        border-bottom: none;
+        padding-bottom: 0;
+      }
+
+      .section-header {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 1.5rem;
+        margin-bottom: 2rem;
+      }
+
+      .section-kicker {
+        font-size: 0.76rem;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: rgba(20, 20, 20, 0.6);
+        margin-bottom: 0.6rem;
+      }
+
+      .section-title {
+        font-family: "Playfair Display", serif;
+        font-size: clamp(1.5rem, 2.2vw, 1.8rem);
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .section-description {
+        max-width: 26rem;
+        font-size: 0.96rem;
+        color: rgba(20, 20, 20, 0.75);
+      }
+
+      /* SERVICES */
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 1.5rem;
+      }
+
+      .services-grid .service-card:last-child {
+        grid-column: 2 / 4;
+        justify-self: center;
+      }
+
+      .service-card {
+        border-radius: 18px;
+        padding: 1.4rem 1.3rem 1.3rem;
+        background: #f9f7f3;
+        border: 1px solid rgba(0, 0, 0, 0.04);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.03);
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+        min-height: 180px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .service-card::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: linear-gradient(
+            120deg,
+            rgba(201, 168, 76, 0.1),
+            transparent 45%,
+            rgba(122, 122, 114, 0.1)
+          ),
+          url("https://www.transparenttextures.com/patterns/fabric-of-squares.png");
+        mix-blend-mode: soft-light;
+        opacity: 0.55;
+        pointer-events: none;
+      }
+
+      .service-icon {
+        width: 38px;
+        height: 38px;
+        border-radius: 12px;
+        background: linear-gradient(135deg, #2b2b2b, #101010);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #f5f5f5;
+        box-shadow: 0 10px 22px rgba(0, 0, 0, 0.4);
+        position: relative;
+        z-index: 1;
+      }
+
+      .service-icon span {
+        font-size: 1.1rem;
+      }
+
+      .service-title {
+        font-weight: 600;
+        font-size: 0.98rem;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        position: relative;
+        z-index: 1;
+      }
+
+      .service-body {
+        font-size: 0.9rem;
+        color: rgba(20, 20, 20, 0.74);
+        position: relative;
+        z-index: 1;
+      }
+
+      .service-tag {
+        margin-top: auto;
+        font-size: 0.76rem;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: rgba(20, 20, 20, 0.5);
+        position: relative;
+        z-index: 1;
+      }
+
+      /* ABOUT */
+      .about-layout {
+        display: grid;
+        grid-template-columns: minmax(0, 1.3fr) minmax(0, 1.1fr);
+        gap: 2.5rem;
+        align-items: center;
+      }
+
+      .about-text h3 {
+        font-family: "Playfair Display", serif;
+        font-size: 1.45rem;
+        margin: 0 0 0.9rem;
+      }
+
+      .about-text p {
+        margin: 0 0 0.9rem;
+        font-size: 0.96rem;
+        color: rgba(20, 20, 20, 0.78);
+      }
+
+      .about-text p:last-of-type {
+        margin-bottom: 1.5rem;
+      }
+
+      .about-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.4rem;
+        font-size: 0.85rem;
+        color: rgba(20, 20, 20, 0.7);
+      }
+
+      .about-meta-item strong {
+        display: block;
+        font-size: 0.9rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: rgba(20, 20, 20, 0.9);
+        margin-bottom: 0.15rem;
+      }
+
+      .about-image-wrap {
+        position: relative;
+      }
+
+      .about-main-card {
+        border-radius: 22px;
+        overflow: hidden;
+        box-shadow: 0 22px 55px rgba(0, 0, 0, 0.35);
+        position: relative;
+      }
+
+      .about-main-card::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: radial-gradient(circle at 10% 0, rgba(255, 255, 255, 0.22), transparent 60%);
+        mix-blend-mode: soft-light;
+      }
+
+      .about-main-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      .about-tag {
+        position: absolute;
+        bottom: 1.2rem;
+        left: 1.2rem;
+        padding: 0.6rem 0.85rem;
+        border-radius: 999px;
+        background: rgba(0, 0, 0, 0.8);
+        color: var(--off-white);
+        font-size: 0.78rem;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+      }
+
+      .about-pill {
+        position: absolute;
+        top: -1.2rem;
+        right: 0.75rem;
+        padding: 0.55rem 0.9rem;
+        border-radius: 999px;
+        background: #f5f3f0;
+        font-size: 0.72rem;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: #45423a;
+        box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+      }
+
+      /* WHY CHOOSE US */
+      .why-layout {
+        display: grid;
+        grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+        gap: 2.2rem;
+        align-items: center;
+      }
+
+      .why-intro {
+        font-size: 0.95rem;
+        color: rgba(20, 20, 20, 0.8);
+        max-width: 26rem;
+      }
+
+      .why-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1.4rem;
+      }
+
+      .why-card {
+        padding: 1.25rem 1.1rem 1.1rem;
+        border-radius: 18px;
+        background: #f1ede6;
+        border: 1px solid rgba(0, 0, 0, 0.04);
+      }
+
+      .why-value {
+        font-family: "Playfair Display", serif;
+        font-size: 1.35rem;
+        margin-bottom: 0.25rem;
+      }
+
+      .why-label {
+        font-size: 0.8rem;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: rgba(20, 20, 20, 0.7);
+        margin-bottom: 0.35rem;
+      }
+
+      .why-text {
+        font-size: 0.86rem;
+        color: rgba(20, 20, 20, 0.7);
+      }
+
+      /* WORK / GALLERY */
+      .work-layout {
+        display: grid;
+        grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.1fr);
+        gap: 1.8rem;
+      }
+
+      .work-copy {
+        font-size: 0.95rem;
+        color: rgba(20, 20, 20, 0.8);
+      }
+
+      .work-copy p {
+        margin: 0 0 0.95rem;
+      }
+
+      .work-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-top: 0.6rem;
+      }
+
+      .work-tag {
+        padding: 0.25rem 0.7rem;
+        border-radius: 999px;
+        border: 1px solid rgba(0, 0, 0, 0.06);
+        font-size: 0.78rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: rgba(20, 20, 20, 0.7);
+        background: #fbf8f3;
+      }
+
+      .work-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+        gap: 1.2rem;
+      }
+
+      .work-item-large,
+      .work-item-small {
+        position: relative;
+        overflow: hidden;
+        border-radius: 18px;
+        box-shadow: 0 18px 40px rgba(0, 0, 0, 0.3);
+      }
+
+      .work-item-large img,
+      .work-item-small img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transform: scale(1.03);
+        transition: transform 260ms ease-out;
+      }
+
+      .work-item-large:hover img,
+      .work-item-small:hover img {
+        transform: scale(1.07);
+      }
+
+      .work-label {
+        position: absolute;
+        left: 0.85rem;
+        bottom: 0.85rem;
+        padding: 0.45rem 0.8rem;
+        border-radius: 999px;
+        background: rgba(8, 8, 8, 0.9);
+        color: var(--off-white);
+        font-size: 0.76rem;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+      }
+
+      /* CONTACT */
+      .contact-wrap {
+        background: radial-gradient(circle at top left, #2a2927, #050505);
+        color: var(--off-white);
+        border-radius: 24px;
+        padding: 2.2rem 2rem 2rem;
+        display: grid;
+        grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.1fr);
+        gap: 2.3rem;
+        box-shadow: 0 24px 55px rgba(0, 0, 0, 0.85);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+      }
+
+      .contact-intro-kicker {
+        font-size: 0.76rem;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: rgba(245, 243, 240, 0.7);
+        margin-bottom: 0.7rem;
+      }
+
+      .contact-intro-title {
+        font-family: "Playfair Display", serif;
+        font-size: 1.6rem;
+        margin-bottom: 0.6rem;
+      }
+
+      .contact-intro-text {
+        font-size: 0.94rem;
+        color: rgba(245, 243, 240, 0.8);
+        margin-bottom: 1.4rem;
+      }
+
+      .contact-details {
+        display: flex;
+        flex-direction: column;
+        gap: 0.7rem;
+        font-size: 0.9rem;
+        color: rgba(245, 243, 240, 0.88);
+      }
+
+      .contact-details strong {
+        font-size: 0.8rem;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: rgba(245, 243, 240, 0.7);
+        display: block;
+        margin-bottom: 0.18rem;
+      }
+
+      .contact-note {
+        margin-top: 1.35rem;
+        font-size: 0.8rem;
+        color: rgba(245, 243, 240, 0.7);
+      }
+
+      .contact-form {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem 0.9rem;
+      }
+
+      .form-field {
+        display: flex;
+        flex-direction: column;
+        gap: 0.4rem;
+        font-size: 0.84rem;
+      }
+
+      .form-field:nth-child(3),
+      .form-field:nth-child(4) {
+        grid-column: 1 / -1;
+      }
+
+      label {
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: rgba(245, 243, 240, 0.74);
+      }
+
+      input,
+      textarea {
+        padding: 0.7rem 0.75rem;
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        background-color: rgba(5, 5, 5, 0.9);
+        color: var(--off-white);
+        font-size: 0.9rem;
+        outline: none;
+        transition: border-color 160ms ease, box-shadow 160ms ease, background-color 160ms ease;
+        font-family: inherit;
+        resize: vertical;
+        min-height: 44px;
+      }
+
+      textarea {
+        min-height: 100px;
+      }
+
+      input::placeholder,
+      textarea::placeholder {
+        color: rgba(245, 243, 240, 0.5);
+      }
+
+      input:focus,
+      textarea:focus {
+        border-color: var(--gold);
+        box-shadow: 0 0 0 1px rgba(201, 168, 76, 0.2);
+        background-color: rgba(8, 8, 8, 0.95);
+      }
+
+      .form-footer {
+        margin-top: 0.9rem;
+        grid-column: 1 / -1;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 0.7rem 1.2rem;
+      }
+
+      .form-helper {
+        font-size: 0.8rem;
+        color: rgba(245, 243, 240, 0.7);
+      }
+
+      .form-message {
+        width: 100%;
+        font-size: 0.82rem;
+        margin-top: 0.4rem;
+      }
+
+      .form-message.success {
+        color: #7ed7a0;
+      }
+
+      .form-message.error {
+        color: #ff9c9c;
+      }
+
+      .btn-submit {
+        border-radius: 999px;
+        border: none;
+        padding: 0.85rem 1.7rem;
+        font-size: 0.86rem;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        background: linear-gradient(120deg, #ddc27a, var(--gold), #b78e2f);
+        color: #111;
+        font-weight: 600;
+        cursor: pointer;
+        box-shadow: 0 16px 36px rgba(0, 0, 0, 0.8);
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .btn-submit:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+        box-shadow: none;
+      }
+
+      /* FOOTER */
+      .footer {
+        margin-top: 3.2rem;
+        padding-top: 1.7rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        font-size: 0.78rem;
+        color: rgba(245, 243, 240, 0.7);
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.9rem;
+      }
+
+      .footer-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.2rem;
+      }
+
+      .footer-meta-item {
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+      }
+
+      /* RESPONSIVE */
+      @media (max-width: 960px) {
+        .nav-inner {
+          padding-inline: 1.25rem;
+        }
+
+        .nav-links {
+          display: none;
+        }
+
+        .nav-toggle {
+          display: inline-flex;
+        }
+
+        .nav-drawer.open {
+          display: block;
+        }
+
+        .hero {
+          grid-template-columns: minmax(0, 1fr);
+        }
+
+        .hero-right {
+          order: -1;
+        }
+
+        .hero-card {
+          margin-top: 0.5rem;
+        }
+
+        .hero-float-card {
+          position: static;
+          transform: none;
+          margin-top: 0.85rem;
+        }
+
+        .sections-inner {
+          padding-inline: 1.25rem;
+        }
+
+        .services-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .services-grid .service-card:last-child {
+          grid-column: 1 / 3;
+          justify-self: center;
+        }
+
+        .about-layout,
+        .why-layout,
+        .contact-wrap,
+        .work-layout {
+          grid-template-columns: minmax(0, 1fr);
+        }
+
+        .about-image-wrap {
+          order: -1;
+        }
+      }
+
+      @media (max-width: 720px) {
+        .page-inner {
+          padding-inline: 1rem;
+        }
+
+        .nav-inner {
+          padding-inline: 1rem;
+        }
+
+        .sections-inner {
+          padding-inline: 1rem;
+        }
+
+        .hero {
+          padding-top: 2.5rem;
+          padding-bottom: 3.5rem;
+        }
+
+        .hero-title {
+          font-size: 2.2rem;
+        }
+
+        .hero-subtitle {
+          font-size: 0.94rem;
+        }
+
+        .hero-actions {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .sections {
+          border-radius: 24px 24px 0 0;
+        }
+
+        .section {
+          padding-block: 2.2rem;
+        }
+
+        .section-header {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .services-grid {
+          grid-template-columns: minmax(0, 1fr);
+        }
+
+        .services-grid .service-card:last-child {
+          grid-column: 1;
+          justify-self: stretch;
+        }
+
+        .why-grid {
+          grid-template-columns: minmax(0, 1fr);
+        }
+
+        .work-grid {
+          grid-template-columns: minmax(0, 1fr);
+        }
+
+        .contact-wrap {
+          padding: 1.7rem 1.4rem 1.6rem;
+        }
+
+        .footer {
+          align-items: flex-start;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .hero-card {
+          padding: 1.4rem 1.35rem 1.25rem;
+        }
+
+        .hero-card-grid {
+          grid-template-columns: minmax(0, 1fr);
+        }
+
+        .contact-form {
+          grid-template-columns: minmax(0, 1fr);
+        }
+
+        .form-footer {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <header class="nav">
+        <div class="nav-inner">
+          <a href="#top" class="logo">
+            <div class="logo-mark">GA</div>
+            <div>
+              <span class="logo-text-main">G A Stone Mason LLC</span>
+              <span class="logo-text-sub">Masonry · Commercial &amp; Residential</span>
+            </div>
+          </a>
+          <nav class="nav-links" aria-label="Primary navigation">
+            <a class="nav-link" data-scroll-to="#about">About</a>
+            <a class="nav-link" data-scroll-to="#services">Services</a>
+            <a class="nav-link" data-scroll-to="#work">Work</a>
+            <a class="nav-link" data-scroll-to="#contact">Contact</a>
+          </nav>
+          <button class="nav-toggle" aria-label="Toggle navigation">
+            <div class="nav-toggle-line"></div>
+          </button>
+        </div>
+        <div class="nav-drawer" id="mobileNav">
+          <div class="nav-drawer-inner">
+            <a data-scroll-to="#about">About <span>Who we are</span></a>
+            <a data-scroll-to="#services">Services <span>What we build</span></a>
+            <a data-scroll-to="#work">Work <span>Recent projects</span></a>
+            <a data-scroll-to="#contact">Contact <span>Request a quote</span></a>
+          </div>
+        </div>
+      </header>
+
+      <main class="page-inner" id="top">
+        <section class="hero" aria-labelledby="heroTitle">
+          <div class="hero-left">
+            <div class="hero-header-kicker">
+              <span class="hero-header-kicker-dot"></span>
+              Premium stone masonry, patios &amp; concrete
+            </div>
+            <h1 class="hero-title" id="heroTitle">
+              Built to Last.<br />
+              <span>Crafted to Impress.</span>
+            </h1>
+            <p class="hero-subtitle">
+              G A Stone Mason LLC is a family-owned masonry studio delivering enduring stone work,
+              patios, pools, decks, and concrete finishes for discerning residential estates and
+              commercial properties across the region.
+            </p>
+            <div class="hero-highlight-row">
+              <div class="hero-badge">
+                <span class="hero-badge-dot">
+                  <span class="hero-badge-dot-inner"></span>
+                </span>
+                Commercial &amp; residential projects
+              </div>
+              <div class="hero-meta">
+                <div class="hero-meta-item">
+                  <strong>15+ Years</strong>
+                  In custom masonry
+                </div>
+                <div class="hero-meta-item">
+                  <strong>Certified</strong>
+                  Licensed &amp; insured
+                </div>
+              </div>
+            </div>
+            <div class="hero-actions">
+              <button class="btn-primary" data-scroll-to="#contact">Get a Free Quote</button>
+              <button class="btn-secondary-link" data-scroll-to="#work" type="button">
+                <span>➝</span>
+                View recent work
+              </button>
+            </div>
+          </div>
+          <div class="hero-right">
+            <div class="hero-card" aria-hidden="true">
+              <div class="hero-card-overlay"></div>
+              <!-- Hero background photo -->
+              <img
+                src="images/hero.jpg"
+                alt="Stone and concrete details for a premium outdoor space"
+                class="hero-card-img"
+              />
+              <div class="hero-card-header">
+                <div class="hero-card-title">Stonework that carries weight.</div>
+                <div class="hero-card-tag">Design-led masonry</div>
+              </div>
+              <div class="hero-card-grid">
+                <div class="hero-stat">
+                  <div class="hero-stat-label">Years Delivering Projects</div>
+                  <div class="hero-stat-value">
+                    <strong>15+</strong>
+                    <span>In the field</span>
+                  </div>
+                  <div class="hero-stat-subtext">
+                    Experienced across residential, poolscapes, and outdoor living spaces.
+                  </div>
+                </div>
+                <div class="hero-stat">
+                  <div class="hero-stat-label">Completed Installs</div>
+                  <div class="hero-stat-value">
+                    <strong>350+</strong>
+                    <span>Projects</span>
+                  </div>
+                  <div class="hero-stat-subtext">
+                    From intimate courtyards to expansive terraces and pool decks.
+                  </div>
+                </div>
+                <div class="hero-stat">
+                  <div class="hero-stat-label">Average Client Rating</div>
+                  <div class="hero-stat-value">
+                    <strong>4.9</strong>
+                    <span>/ 5.0</span>
+                  </div>
+                  <div class="hero-stat-subtext">
+                    Trusted by homeowners, builders, and design professionals.
+                  </div>
+                </div>
+                <div class="hero-stat">
+                  <div class="hero-stat-label">Service Area</div>
+                  <div class="hero-stat-value">
+                    <strong>Local</strong>
+                    <span>Focus</span>
+                  </div>
+                  <div class="hero-stat-subtext">
+                    Proudly serving our community with responsive, reliable service.
+                  </div>
+                </div>
+              </div>
+              <div class="hero-card-footer">
+                <div class="hero-card-footer-text">
+                  <strong>Every stone, set with intent.</strong>
+                  Detail-driven workmanship from base prep to final clean down.
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <div class="sections">
+          <div class="sections-inner">
+            <section class="section" id="about" aria-labelledby="aboutTitle">
+              <div class="section-header">
+                <div>
+                  <div class="section-kicker">About</div>
+                  <h2 class="section-title" id="aboutTitle">Family-built. Detail-led.</h2>
+                </div>
+                <p class="section-description">
+                  We combine the hands-on discipline of masonry with a design-conscious eye, so
+                  every project looks as good up close as it does from the street.
+                </p>
+              </div>
+              <div class="about-layout">
+                <div class="about-text">
+                  <h3>Local roots with a craftsman’s standard.</h3>
+                  <p>
+                    G A Stone Mason LLC is a family-owned company built on word-of-mouth, repeat
+                    clients, and projects that stand the test of time. Every job is led on-site by
+                    an experienced mason, not handed off to a rotating crew.
+                  </p>
+                  <p>
+                    We collaborate closely with homeowners, builders, and designers – offering
+                    honest guidance on materials, layout, and detailing so the final result feels
+                    intentional from the first stone to the last sweep, whether the project is a
+                    private residence or a commercial space open to the public.
+                  </p>
+                  <p>
+                    Our team treats every property as if it were our own, keeping sites tidy,
+                    timelines clear, and communication straightforward at every stage.
+                  </p>
+                  <div class="about-meta">
+                    <div class="about-meta-item">
+                      <strong>Owner-led on every job</strong>
+                      You’ll see the same faces from first visit to final walkthrough.
+                    </div>
+                    <div class="about-meta-item">
+                      <strong>Trusted locally</strong>
+                      Built on referrals, not cold calls – most of our work comes from past clients.
+                    </div>
+                  </div>
+                </div>
+                <div class="about-image-wrap" aria-hidden="true">
+                  <div class="about-main-card">
+                    <!-- About section photo -->
+                    <img
+                      src="images/about.jpg"
+                      alt="Stone mason setting pavers on an outdoor patio"
+                    />
+                    <div class="about-tag">Family-owned &amp; operated</div>
+                  </div>
+                  <div class="about-pill">Precision in every joint.</div>
+                </div>
+              </div>
+            </section>
+
+            <section class="section" id="services" aria-labelledby="servicesTitle">
+              <div class="section-header">
+                <div>
+                  <div class="section-kicker">Services</div>
+                  <h2 class="section-title" id="servicesTitle">Built for everyday living.</h2>
+                </div>
+                <p class="section-description">
+                  From fireplaces to walkways, each surface is engineered to perform in real life –
+                  durable under foot traffic, weather, and time.
+                </p>
+              </div>
+              <div class="services-grid">
+                <article class="service-card">
+                  <div class="service-icon" aria-hidden="true">
+                    <span>◼︎</span>
+                  </div>
+                  <h3 class="service-title">Fireplaces</h3>
+                  <p class="service-body">
+                    Indoor and outdoor stone and masonry fireplaces that become the visual anchor
+                    of the room or patio, proportioned and detailed to suit your architecture.
+                  </p>
+                  <img src="images/fireplace.jpg" style="width:100%;height:200px;object-fit:cover;border-radius:10px;margin-top:0.5rem;" />
+                  <div class="service-tag">Interior &amp; outdoor hearths</div>
+                </article>
+                <article class="service-card">
+                  <div class="service-icon" aria-hidden="true">
+                    <span>◇</span>
+                  </div>
+                  <h3 class="service-title">Columns</h3>
+                  <p class="service-body">
+                    Masonry and structural columns for entries, porches, and driveways that frame
+                    your property with presence while tying into existing materials and lines.
+                  </p>
+                  <img src="images/columns.jpg" style="width:100%;height:200px;object-fit:cover;border-radius:10px;margin-top:0.5rem;" />
+                  <div class="service-tag">Entry &amp; structural accents</div>
+                </article>
+                <article class="service-card">
+                  <div class="service-icon" aria-hidden="true">
+                    <span>☰</span>
+                  </div>
+                  <h3 class="service-title">Stucco</h3>
+                  <p class="service-body">
+                    Clean, modern stucco systems and repairs for homes and commercial facades,
+                    finished with sharp lines and careful attention to moisture management.
+                  </p>
+                  <img src="images/stucco.jpg" style="width:100%;height:200px;object-fit:cover;border-radius:10px;margin-top:0.5rem;" />
+                  <div class="service-tag">Exterior finishes</div>
+                </article>
+                <article class="service-card">
+                  <div class="service-icon" aria-hidden="true">
+                    <span>▤</span>
+                  </div>
+                  <h3 class="service-title">Patios</h3>
+                  <p class="service-body">
+                    Stone and paver patios scaled to your home, with layouts that balance furniture,
+                    circulation, and views for everyday use and entertaining.
+                  </p>
+                  <img src="images/patios.jpg" style="width:100%;height:200px;object-fit:cover;border-radius:10px;margin-top:0.5rem;" />
+                  <div class="service-tag">Outdoor rooms</div>
+                </article>
+                <article class="service-card">
+                  <div class="service-icon" aria-hidden="true">
+                    <span>✧</span>
+                  </div>
+                  <h3 class="service-title">Fire Pits</h3>
+                  <p class="service-body">
+                    Custom-built wood-burning and gas fire pits with integrated seating and stone
+                    detailing that invite people to stay outside longer.
+                  </p>
+                  <img src="images/firepits.jpg" style="width:100%;height:200px;object-fit:cover;border-radius:10px;margin-top:0.5rem;" />
+                  <div class="service-tag">Gathering spaces</div>
+                </article>
+                <article class="service-card">
+                  <div class="service-icon" aria-hidden="true">
+                    <span>▬</span>
+                  </div>
+                  <h3 class="service-title">Walkways</h3>
+                  <p class="service-body">
+                    Thoughtfully graded and detailed walkways that guide guests from drive to door,
+                    tying landscaping, entries, and outdoor living into a single path.
+                  </p>
+                  <img src="images/walkways.jpg" style="width:100%;height:200px;object-fit:cover;border-radius:10px;margin-top:0.5rem;" />
+                  <div class="service-tag">Entries &amp; paths</div>
+                </article>
+                <article class="service-card">
+                  <div class="service-icon" aria-hidden="true">
+                    <span>▣</span>
+                  </div>
+                  <h3 class="service-title">Pavers</h3>
+                  <p class="service-body">
+                    Driveways, walkways, and outdoor surfaces in natural stone, concrete, or brick
+                    pavers – laid for drainage, durability, and a clean, finished look.
+                  </p>
+                  <img src="images/pavers.png" style="width:100%;height:200px;object-fit:cover;border-radius:10px;margin-top:0.5rem;" />
+                  <div class="service-tag">Driveways &amp; surfaces</div>
+                </article>
+                <article class="service-card">
+                  <div class="service-icon" aria-hidden="true">
+                    <span>▮</span>
+                  </div>
+                  <h3 class="service-title">Retention Walls</h3>
+                  <p class="service-body">
+                    Structural and decorative retaining walls that hold back soil, define levels,
+                    and create usable space on sloped lots with lasting stability.
+                  </p>
+                  <img src="images/retentionwalls.jpg" style="width:100%;height:200px;object-fit:cover;border-radius:10px;margin-top:0.5rem;" />
+                  <div class="service-tag">Slopes &amp; terraces</div>
+                </article>
+                <article class="service-card">
+                  <div class="service-icon" aria-hidden="true">
+                    <span>⋯</span>
+                  </div>
+                  <h3 class="service-title">And More…</h3>
+                  <p class="service-body">
+                    Stone and masonry work beyond the list – steps, caps, repairs, and custom
+                    details. Tell us your project and we’ll say how we can help.
+                  </p>
+                  <div class="service-tag">Custom &amp; specialty</div>
+                </article>
+              </div>
+            </section>
+
+            <section class="section" aria-labelledby="whyTitle">
+              <div class="section-header">
+                <div>
+                  <div class="section-kicker">Why Choose Us</div>
+                  <h2 class="section-title" id="whyTitle">Concrete reasons to trust us.</h2>
+                </div>
+                <p class="section-description">
+                  We obsess over the parts you don’t always see – base work, drainage, layout –
+                  because that’s what keeps a project solid years after the photos are taken.
+                </p>
+              </div>
+              <div class="why-layout">
+                <p class="why-intro">
+                  Choosing a masonry contractor is about more than price per square foot. It’s
+                  about workmanship, reliability, and knowing your home is in careful hands. Our
+                  process is built for clarity – clear scopes, tidy sites, and craftsmanship that
+                  lives up to its promise.
+                </p>
+                <div class="why-grid">
+                  <article class="why-card">
+                    <div class="why-value">15+</div>
+                    <div class="why-label">Years of Experience</div>
+                    <p class="why-text">
+                      Deep field experience across stone, concrete, and deck systems – so details
+                      don’t get left to chance.
+                    </p>
+                  </article>
+                  <article class="why-card">
+                    <div class="why-value">100%</div>
+                    <div class="why-label">Satisfaction Focus</div>
+                    <p class="why-text">
+                      We stay on-site until the details are right, walking each project with you
+                      before we call it complete.
+                    </p>
+                  </article>
+                  <article class="why-card">
+                    <div class="why-value">Licensed</div>
+                    <div class="why-label">&amp; Insured</div>
+                    <p class="why-text">
+                      Fully licensed and insured for your peace of mind, with safety and standards
+                      front and center.
+                    </p>
+                  </article>
+                </div>
+              </div>
+            </section>
+
+            <section class="section" id="work" aria-labelledby="workTitle">
+              <div class="section-header">
+                <div>
+                  <div class="section-kicker">Work</div>
+                  <h2 class="section-title" id="workTitle">Projects that hold up.</h2>
+                </div>
+                <p class="section-description">
+                  A small selection of the patios, pool decks, and stone details we’ve created for
+                  clients who expect every surface to carry its weight.
+                </p>
+              </div>
+              <div class="work-layout">
+                <div class="work-copy">
+                  <p>
+                    Every project begins with understanding how you’ll actually live in the space –
+                    morning coffee on the steps, kids by the pool, cars on the drive. We then design
+                    and build surfaces that feel natural to use and effortless to maintain.
+                  </p>
+                  <p>
+                    We work in natural stone, pavers, concrete, and wood to create outdoor rooms
+                    that feel connected to your architecture and surrounding landscape.
+                  </p>
+                  <div class="work-tags">
+                    <span class="work-tag">Stone terraces</span>
+                    <span class="work-tag">Pool decks</span>
+                    <span class="work-tag">Outdoor kitchens</span>
+                    <span class="work-tag">Driveways &amp; entries</span>
+                  </div>
+                </div>
+                <div class="work-grid" aria-hidden="true">
+                  <div class="work-item-large">
+                    <!-- Project 1 - patio and steps -->
+                    <img
+                      src="images/project1.jpg"
+                      alt="Stone patio with seating and greenery"
+                    />
+                  </div>
+                  <div class="work-item-small">
+                    <!-- Project 2 - pool surround -->
+                    <img
+                      src="images/project2.jpg"
+                      alt="Pool deck with stone coping"
+                    />
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section class="section" id="contact" aria-labelledby="contactTitle">
+              <div class="section-header">
+                <div>
+                  <div class="section-kicker">Contact</div>
+                  <h2 class="section-title" id="contactTitle">Tell us about your project.</h2>
+                </div>
+                <p class="section-description">
+                  Share a few details and we’ll follow up to schedule a walkthrough, review options,
+                  and provide a clear, written estimate.
+                </p>
+              </div>
+              <div class="contact-wrap">
+                <div>
+                  <div class="contact-intro-kicker">Start with a conversation</div>
+                  <h3 class="contact-intro-title">Request a free on-site quote.</h3>
+                  <p class="contact-intro-text">
+                    Fill out the form and we’ll be in touch within one business day to learn more,
+                    confirm your location, and talk through timelines and budget.
+                  </p>
+                  <div class="contact-details">
+                    <div>
+                      <strong>Phone</strong>
+                      <span>(864) 316-7416</span>
+                    </div>
+                    <div>
+                      <strong>Email</strong>
+                      <span>GAStoneMason@gmail.com</span>
+                    </div>
+                    <div>
+                      <strong>Service Area</strong>
+                      <span>Upstate SC</span>
+                    </div>
+                  </div>
+                  <p class="contact-note">
+                    Not ready for a visit yet? Use the form to ask a quick question – we’re happy
+                    to help you think through options.
+                  </p>
+                </div>
+                <form
+                  class="contact-form"
+                  id="contactForm"
+                  action="https://formspree.io/f/mgonlavr"
+                  method="POST"
+                  novalidate
+                >
+                  <div class="form-field">
+                    <label for="name">Name</label>
+                    <input
+                      type="text"
+                      id="name"
+                      name="Name"
+                      placeholder="Full name"
+                      autocomplete="name"
+                      required
+                    />
+                  </div>
+                  <div class="form-field">
+                    <label for="phone">Phone</label>
+                    <input
+                      type="tel"
+                      id="phone"
+                      name="Phone"
+                      placeholder="Best contact number"
+                      autocomplete="tel"
+                      required
+                    />
+                  </div>
+                  <div class="form-field">
+                    <label for="email">Email</label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="Email"
+                      placeholder="you@example.com"
+                      autocomplete="email"
+                    />
+                  </div>
+                  <div class="form-field">
+                    <label for="project">Project Description</label>
+                    <textarea
+                      id="project"
+                      name="Project Description"
+                      placeholder="Patio, pool deck, stone wall, driveway, or custom outdoor project. Include any timelines or inspiration."
+                      required
+                    ></textarea>
+                  </div>
+                  <div class="form-footer">
+                    <button type="submit" class="btn-submit">
+                      Submit request
+                      <span>➝</span>
+                    </button>
+                    <div class="form-helper">
+                      No spam. No obligation. We’ll only use your details to respond to your
+                      inquiry.
+                    </div>
+                    <div class="form-message" id="formMessage" aria-live="polite"></div>
+                  </div>
+                </form>
+              </div>
+              <footer class="footer">
+                <div>&copy; <span id="year"></span> G A Stone Mason LLC. All rights reserved.</div>
+                <div class="footer-meta">
+                  <span class="footer-meta-item">Premium stone masonry &amp; concrete.</span>
+                  <span class="footer-meta-item">Call (864) 316-7416 to get started.</span>
+                </div>
+              </footer>
+            </section>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script>
+      (function () {
+        const navToggle = document.querySelector(".nav-toggle");
+        const mobileNav = document.getElementById("mobileNav");
+        const navLinks = document.querySelectorAll("[data-scroll-to]");
+        const form = document.getElementById("contactForm");
+        const formMessage = document.getElementById("formMessage");
+        const yearSpan = document.getElementById("year");
+
+        if (yearSpan) {
+          yearSpan.textContent = new Date().getFullYear();
+        }
+
+        function closeMobileNav() {
+          if (!mobileNav || !navToggle) return;
+          mobileNav.classList.remove("open");
+          navToggle.classList.remove("open");
+        }
+
+        if (navToggle && mobileNav) {
+          navToggle.addEventListener("click", function () {
+            const isOpen = mobileNav.classList.toggle("open");
+            navToggle.classList.toggle("open", isOpen);
+          });
+        }
+
+        function smoothScrollTo(selector) {
+          const target = document.querySelector(selector);
+          if (!target) return;
+          const headerOffset = 72;
+          const rect = target.getBoundingClientRect();
+          const offsetTop = rect.top + window.scrollY - headerOffset;
+          window.scrollTo({ top: offsetTop, behavior: "smooth" });
+        }
+
+        navLinks.forEach(function (link) {
+          link.addEventListener("click", function (event) {
+            const targetSelector = this.getAttribute("data-scroll-to");
+            if (!targetSelector) return;
+            event.preventDefault();
+            smoothScrollTo(targetSelector);
+            closeMobileNav();
+          });
+        });
+
+        const mainNavLinks = document.querySelectorAll(".nav-links .nav-link");
+        const sectionIds = ["#about", "#services", "#work", "#contact"];
+
+        function updateActiveNav() {
+          const scrollPosition = window.scrollY;
+          let activeId = null;
+
+          sectionIds.forEach(function (id) {
+            const section = document.querySelector(id);
+            if (!section) return;
+            const rect = section.getBoundingClientRect();
+            const offsetTop = rect.top + window.scrollY - 100;
+            if (scrollPosition >= offsetTop) {
+              activeId = id;
+            }
+          });
+
+          mainNavLinks.forEach(function (link) {
+            const targetSelector = link.getAttribute("data-scroll-to");
+            if (targetSelector === activeId) {
+              link.classList.add("active");
+            } else {
+              link.classList.remove("active");
+            }
+          });
+        }
+
+        window.addEventListener("scroll", updateActiveNav);
+        window.addEventListener("load", updateActiveNav);
+
+        // Form submits to Formspree via action/method; no JS submit handler needed
+      })();
+    </script>
+  </body>
+</html>
